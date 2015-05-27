@@ -1,6 +1,6 @@
   angular.module('starter.controllers', [])
 
-  .controller('DashCtrl', function($scope, $ionicModal, Entries, $ionicPopover, $timeout, $ionicPopup) {
+  .controller('DashCtrl', function($cordovaSocialSharing, $scope, $ionicModal, Entries, $ionicPopover, $timeout, $ionicPopup, $ionicLoading) {
   //todo
   //allow save only after timer has started.
   //play must change to pause
@@ -190,9 +190,20 @@
 
    $scope.mailTo = function () {
      Entries.export().then(function (res) {
-       //window.plugins.
+       var filepath = cordova.file.dataDirectory.toString()+"countThemAll.csv";
+       $cordovaSocialSharing.shareViaEmail('Dados Coletados pelo Count Them All!', '', [], [], [], filePath).then(function(result) {
+          $ionicLoading.show({
+            template: 'Email enviado.',
+            duration: 1000
+          });
+        }, function(err) {
+          $ionicLoading.show({
+            template: 'Não foi possível enviar o email. Tente novamente mais tarde.',
+            duration: 1500
+          });
+        });
      }).catch(function (err) {
-       debugger;
+       console.log(err);
      })
    }
   })

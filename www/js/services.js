@@ -12,7 +12,6 @@ angular.module('starter.services', [])
     return db.info().then(function (result) {
       entry.id = result.doc_count;
       entry._id = result.update_seq.toString();
-      debugger;
       return db.put(entry);
     }).then(function (resultPut) {
       return db.get(resultPut.id);
