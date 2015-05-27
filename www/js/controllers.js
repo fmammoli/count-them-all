@@ -190,8 +190,8 @@
 
    $scope.mailTo = function () {
      Entries.export().then(function (res) {
-       var filepath = cordova.file.dataDirectory.toString()+"countThemAll.csv";
-       $cordovaSocialSharing.shareViaEmail('Dados Coletados pelo Count Them All!', '', [], [], [], filePath).then(function(result) {
+       var filePath = cordova.file.dataDirectory.toString()+"countThemAll.csv";
+       $cordovaSocialSharing.shareViaEmail(null, null, [], [], [], [filePath]).then(function(result) {
           $ionicLoading.show({
             template: 'Email enviado.',
             duration: 1000
@@ -203,7 +203,7 @@
           });
         });
      }).catch(function (err) {
-       console.log(err);
+       console.log(JSON.stringify(err));
      })
    }
   })
