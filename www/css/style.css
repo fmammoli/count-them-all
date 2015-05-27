@@ -40,7 +40,12 @@ About Modal
 .title.about-title{
   text-align: center;
   padding: 48px;
+  color: grey;
 }
 .about-text{
   text-align: center;
+}
+.icon.about-icon{
+  font-size: 120px;
+
 }
