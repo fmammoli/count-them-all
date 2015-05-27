@@ -8,7 +8,8 @@
 angular.module('starter', [
   'ionic',
   'pouchdb',
-  //'ngCordova', 
+  'ngCordova.plugins.file',
+  'ngCordova.plugins.socialSharing',
   'timer',
   'starter.controllers',
   'starter.services'

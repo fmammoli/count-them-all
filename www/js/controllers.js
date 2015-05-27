@@ -1,6 +1,6 @@
-angular.module('starter.controllers', [])
+  angular.module('starter.controllers', [])
 
-.controller('DashCtrl', function($scope, $ionicModal, Entries, $ionicPopover, $timeout, $ionicPopup) {
+  .controller('DashCtrl', function($scope, $ionicModal, Entries, $ionicPopover, $timeout, $ionicPopup) {
   //todo
   //allow save only after timer has started.
   //play must change to pause
@@ -172,4 +172,12 @@ angular.module('starter.controllers', [])
        }
      });
    };
-})
+
+   $scope.mailTo = function () {
+     Entries.export().then(function (res) {
+       //window.plugins.
+     }).catch(function (err) {
+       debugger;
+     })
+   }
+  })
