@@ -58,6 +58,26 @@
     </div>
   </ion-content>
 </ion-view>
+<script id="about-modal.html" type="text/ng-template">
+<ion-modal-view>
+  <ion-header-bar class="bar-calm-900 expanded">
+    <button ng-click="closeModalAbout()" class="button back-button buttons no-text button-clear button-calm-900 header-item">
+      <i class="icon ion-ios-arrow-back"></i>
+    </button>
+    <h1 class="title light">Sobre</h1>
+  </ion-header-bar>
+  <ion-content class="has-header expanded">
+    <h1 class="title about-title">Count Them All!</h1>
+    <p class="about-text">
+      <a class="about-link"><i class='icon ion-social-github'></i>github.com/fmammoli/count-them-all</a>
+    </p>
+    <p class="about-text">
+      This is MIT licensed.
+    </p>
+  </ion-content>
+</ion-modal-view>
+</script>
+
 <script id="create-registry-modal.html" type="text/ng-template">
   <ion-modal-view>
   <ion-header-bar class="bar-calm-900 expanded super-expanded">
@@ -141,6 +161,10 @@
       <a ng-click="showConfirm()" class='item item-icon-right ink'>
         <i class="icon ion-android-delete"></i>
         Remover tudo
+      </a>
+      <a ng-click="openModalAbout()" class='item item-icon-right ink'>
+        <i class="icon ion-android-delete"></i>
+        Sobre
       </a>
     </div>
   </ion-content>

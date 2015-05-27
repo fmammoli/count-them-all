@@ -33,3 +33,14 @@
 .button.button-outline, .button.button-outline.button-assertive, .button.button-outline.button-balanced, .button.button-outline.button-calm, .button.button-outline.button-dark, .button.button-outline.button-energized, .button.button-outline.button-light, .button.button-outline.button-positive, .button.button-outline.button-royal, .button.button-outline.button-stable{
   border-color: initial;
 }
+
+/*
+About Modal
+*/
+.title.about-title{
+  text-align: center;
+  padding: 48px;
+}
+.about-text{
+  text-align: center;
+}

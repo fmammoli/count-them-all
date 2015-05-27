@@ -38,6 +38,13 @@
   }).then(function (modal) {
     $scope.modal = modal;
   });
+  $ionicModal.fromTemplateUrl('about-modal.html', {
+    scope: $scope,
+    animation: 'slide-in-up'
+  }).then(function (modal) {
+    $scope.modalAbout = modal;
+  });
+
   $ionicPopover.fromTemplateUrl('my-popover.html', {
    scope: $scope
   }).then(function(popover) {
@@ -58,7 +65,7 @@
 
   $scope.cancelEntry = function () {
     resetEntry();
-    resetTimmer();
+    $scope.resetTimer();
     $scope.closeModal();
   }
   $scope.toggleTimer = function () {
@@ -111,8 +118,16 @@
     $scope.modal.hide();
   }
 
+  $scope.openModalAbout = function () {
+    $scope.modalAbout.show();
+  }
+
+  $scope.closeModalAbout = function () {
+    $scope.modalAbout.hide();
+  }
   $scope.$on('$destroy', function () {
     $scope.modal.remove();
+    $scope.modalAbout.remove();
   });
 
   //Popover
